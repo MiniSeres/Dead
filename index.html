@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dump Master v3.0</title>
+    <link rel="stylesheet" href="bell.css">
+</head>
+<body>
+    <div class="app" id="app">
+        <div class="header">
+            <div class="logo">
+                <span class="logo-icon">🕸️</span>
+                <span class="logo-text">WEB DUMP<span class="logo-sub">v3.0</span></span>
+            </div>
+            <div class="status-badge" id="statusBadge">● IDLE</div>
+        </div>
+
+        <div class="input-row">
+            <input type="text" id="urlInput" placeholder="https://username.github.io/repo" value="https://example.com">
+            <button class="btn btn-primary" id="btnStart">🚀 START</button>
+            <button class="btn btn-danger" id="btnStop" disabled>⏹ STOP</button>
+            <button class="btn btn-success" id="btnDownload" disabled>💾 DOWNLOAD</button>
+            <button class="btn btn-secondary" id="btnClear">🗑️ CLEAR</button>
+        </div>
+
+        <div class="stats" id="stats">
+            <div class="stat-item"><div class="stat-value blue" id="statTotal">0</div><div class="stat-label">Total</div></div>
+            <div class="stat-item"><div class="stat-value green" id="statSuccess">0</div><div class="stat-label">Success</div></div>
+            <div class="stat-item"><div class="stat-value red" id="statFailed">0</div><div class="stat-label">Failed</div></div>
+            <div class="stat-item"><div class="stat-value yellow" id="statTime">0.0s</div><div class="stat-label">Elapsed</div></div>
+            <div class="stat-item"><div class="stat-value" id="statProgress">0%</div><div class="stat-label">Progress</div></div>
+        </div>
+
+        <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+        <div class="main-grid">
+            <div class="panel">
+                <div class="panel-header">
+                    <span>📁 FILE TREE</span>
+                    <span class="count" id="fileCount">0 files</span>
+                </div>
+                <div class="panel-body" id="fileTree">
+                    <div style="color: var(--text-secondary); font-style: italic; padding: 8px;">Waiting for crawl...</div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header">
+                    <span>📋 LIVE LOG</span>
+                    <span style="font-size:11px; color:var(--text-secondary);" id="logCount">0 entries</span>
+                </div>
+                <div class="panel-body" id="logContainer">
+                    <div style="color: var(--text-secondary); font-style: italic; padding: 8px;">System ready. Enter URL and hit START.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="sybau.js"></script>
+</body>
+                                     </html>
